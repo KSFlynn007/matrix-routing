@@ -7,8 +7,8 @@ import '@tomtom-international/web-sdk-maps/dist/maps.css'
 const App = () => {
   const mapElement = useRef()
   const [map, setMap] = useState({})
-  const [longitude, setLongitude] = useState(-114.062019)
-  const [latitude, setLatitude] = useState(51.044270)
+  const [longitude, setLongitude] = useState(-114.073067)
+  const [latitude, setLatitude] = useState(51.038266)
 
   const convertToPoints = (lngLat) => {
     return {
@@ -157,23 +157,22 @@ const App = () => {
       {/* only load if map is going to render */}
       {map && 
         <div className="app">
-          <h1>Welcome</h1>
-          <div ref={mapElement} className="map"></div>
           <div className="search-bar">
             <h1>Where to?</h1>
             <input 
               type="text"
               id="longitude"
               className="longitude"
-              placeholder="Put in Longitude"
+              placeholder="Longitude"
               onChange={(e) => {setLongitude(e.target.value)}} />
             <input 
               type="text"
               id="latitude"
               className="latitude"
-              placeholder="Put in Latitude"
+              placeholder="Latitude"
               onChange={(e) => {setLatitude(e.target.value)}} />
           </div>
+          <div ref={mapElement} className="map"></div>
         </div>
       }
     </div>
