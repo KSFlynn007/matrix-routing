@@ -1,10 +1,19 @@
 # Getting Started with Create React App
 
+## Key Packages
+- React
+- tomtom-international/web-sdk-maps
+- tomtom-international/web-sdk-services
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm i`
+
+To install all the packages.
 
 ### `npm start`
 
