@@ -1,6 +1,9 @@
 body{
   display: flex;
   justify-content: center;
+  background-color: rgb(55, 62, 66);
+  color: white;
+  text-align: center;
 }
 
 .app {
@@ -8,9 +11,15 @@ body{
   width: 50em;
 }
 
+.search-bar{
+  margin-bottom: 2em;
+}
+
 .map{
   height: 100%;
   aspect-ratio: 1;
+  margin: auto;
+  color: black;
 }
 
 .marker{
@@ -27,4 +36,8 @@ body{
   background-color: red;
   width: 1em;
   height: 1em;
+}
+
+.popup-message{
+  margin-bottom: 0;
 }
