@@ -9,6 +9,7 @@ const App = () => {
   const [map, setMap] = useState({})
   const [longitude, setLongitude] = useState(-114.073067)
   const [latitude, setLatitude] = useState(51.038266)
+  const [search, setSearch] = useState(0)
 
   const convertToPoints = (lngLat) => {
     return {
@@ -150,7 +151,7 @@ const App = () => {
 
     return () => map.remove();
 
-  }, [longitude, latitude])
+  }, [search])
 
   return (
     <div>
@@ -160,19 +161,21 @@ const App = () => {
           <div className="search-bar">
             <h1>Where to?</h1>
             <input 
-              type="text"
+              type="number"
               id="longitude"
               className="longitude"
               placeholder="Longitude"
+              name='longitude'
               onChange={(e) => {setLongitude(e.target.value)}} />
             <input 
-              type="text"
+              type="number"
               id="latitude"
               className="latitude"
               placeholder="Latitude"
               onChange={(e) => {setLatitude(e.target.value)}} />
           </div>
           <div ref={mapElement} className="map"></div>
+          <p>You can hold down "Ctrl" when clicking to tilt map!</p>
         </div>
       }
     </div>
