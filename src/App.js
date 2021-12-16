@@ -7,8 +7,10 @@ import '@tomtom-international/web-sdk-maps/dist/maps.css'
 const App = () => {
   const mapElement = useRef()
   const [map, setMap] = useState({})
-  const [longitude, setLongitude] = useState(-114.073067)
-  const [latitude, setLatitude] = useState(51.038266)
+  const [search, setSearch] = useState({
+    latitude : 51.038266,
+    longitude : -114.073067
+  })
 
   const convertToPoints = (lngLat) => {
     return {
@@ -50,8 +52,8 @@ const App = () => {
 
   useEffect(() => {
     const origin = {
-      lng: longitude,
-      lat: latitude,
+      lng: search.longitude,
+      lat: search.latitude,
     }
     const destinations = []
 
@@ -62,7 +64,7 @@ const App = () => {
         trafficIncidents: true,
         trafficFlow: true,
       },
-      center: [longitude, latitude],
+      center: [search.longitude, search.latitude],
       zoom: 13
     })
     
@@ -83,13 +85,16 @@ const App = () => {
         draggable: true,
         element: element,
       })
-      .setLngLat([longitude, latitude])
+      .setLngLat([search.longitude, search.latitude])
       .addTo(map)
 
       marker.on('dragend', () => {
         const lngLat = marker.getLngLat()
-        setLongitude(lngLat.lng)
-        setLatitude(lngLat.lat)
+
+        setSearch({
+          longitude: lngLat.lng,
+          latitude : lngLat.lat
+        })
       })
 
       marker.setPopup(popup).togglePopup()
@@ -150,13 +155,16 @@ const App = () => {
 
     return () => map.remove();
 
-  }, [latitude, longitude])
+  }, [search.latitude, search.longitude])
+
+  console.log(search.latitude)
+  console.log(search.longitude)
 
   return (
     <div>
       {/* only load if map is going to render */}
       {map && 
-        <div className="app">
+        <div className="app" id='App2'>
           <div className="search-bar">
             <h1>Where to?</h1>
             <input 
@@ -165,13 +173,24 @@ const App = () => {
               className="longitude"
               placeholder="Longitude"
               name='longitude'
-              onChange={(e) => {setLongitude(e.target.value)}} />
+              />
             <input 
               type="number"
               id="latitude"
               className="latitude"
               placeholder="Latitude"
-              onChange={(e) => {setLatitude(e.target.value)}} />
+              />
+
+              <button
+                className='search-btn'
+                onClick={(e) => {setSearch({
+                  latitude: document.getElementById('latitude').value,
+                  longitude: document.getElementById('longitude').value
+                })}}
+              >
+                Search
+              </button>
+
           </div>
           <div ref={mapElement} className="map"></div>
           <p>You can hold down "Ctrl" when clicking to tilt map!</p>
