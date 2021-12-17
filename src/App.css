@@ -1,27 +1,51 @@
+@font-face {
+  font-family: "AirAmericana";
+  src: url(Air\ Americana.ttf);
+}
+
 body{
   display: flex;
   justify-content: center;
   background-color: rgb(55, 62, 66);
   color: white;
   text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .app {
   height: 45em;
-  width: 50em;
+}
+
+h1{
+  font-family: "AirAmericana";
+  letter-spacing: 10px;
+  font-size: 3em;
+  margin-top: 0.3em;
 }
 
 .search-bar{
   margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
 }
 
 .longitude{
-  margin-right: 1em;
+  margin: 0 1em;
   padding: 0.5em;
 }
 
 .latitude{
   padding: 0.5em;
+}
+
+.search-btn{
+  padding: 0.5em;
+  font-size: 1em;
+  font-family: 'AirAmericana';
+}
+
+.search-btn:hover{
+  cursor: pointer;
 }
 
 .map{
@@ -50,4 +74,22 @@ body{
 
 .popup-message{
   margin-bottom: 0;
+}
+
+@media all and (max-width: 792px) {
+  .map {
+    height: 70%;
+    margin: auto;
+    color: black;
+  }
+}
+
+@media all and (max-width: 600px){
+  .search-bar{
+    flex-direction: column;
+    align-items: center;
+  }
+  .longitude{
+    margin: 1em 0;
+  }
 }

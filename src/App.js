@@ -157,16 +157,22 @@ const App = () => {
 
   }, [search.latitude, search.longitude])
 
-  console.log(search.latitude)
-  console.log(search.longitude)
+  // console.log(search.latitude)
+  // console.log(search.longitude)
 
   return (
     <div>
       {/* only load if map is going to render */}
       {map && 
         <div className="app" id='App2'>
+          <h1>Where to?</h1>
           <div className="search-bar">
-            <h1>Where to?</h1>
+            <input 
+              type="number"
+              id="latitude"
+              className="latitude"
+              placeholder="Latitude"
+              />
             <input 
               type="number"
               id="longitude"
@@ -174,13 +180,6 @@ const App = () => {
               placeholder="Longitude"
               name='longitude'
               />
-            <input 
-              type="number"
-              id="latitude"
-              className="latitude"
-              placeholder="Latitude"
-              />
-
               <button
                 className='search-btn'
                 onClick={(e) => {setSearch({
