@@ -1,11 +1,16 @@
-# Getting Started with Create React App
+# Matrix Routing Map
 
-## Key Packages
-- React
-- tomtom-international/web-sdk-maps
-- tomtom-international/web-sdk-services
+Interactive map created using [Create React App](https://github.com/facebook/create-react-app) and TomTom Maps SDK API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Hosted on Heroku
+Check out the live application here [TomTomMatrixMap](#)
+
+## Key Node Packages Used
+- react v. 17.0.2
+- @tomtom-international/web-sdk-maps v. 6.13
+- @tomtom-international/web-sdk-services v.6.13.0
+
+Full TomTom Maps documentation can be found [here](https://developer.tomtom.com/maps-sdk-web-js/documentation), click on the individual objects like "tt", "Map", "LngLat" to learn more about what I used in my project.
 
 ## Available Scripts
 
@@ -47,3 +52,50 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## User Stories
+### User Story 1: 
+As a user, I want to see my starting position on the map.
+
+```
+Given the user has opened the application
+When the map loads
+Then the user will see their icon with a "This is you!" popup message on the map.
+```
+
+### User Story 2:
+As a user, I want to change my starting position on the map.
+
+```
+Given the initial map location has loaded
+When the user clicks and drags their icon
+Then their starting position will have adjusted
+And the marker will move accordingly.
+```
+
+AND
+
+```
+Given the initial map location has loaded
+When the user updates the latitude and longitude coordinates at the top of the page
+And clicks "Search" button
+Then the map will reload and the starting position will have changed to the input
+```
+
+### User Story 3:
+As a user, I want the map to show me the best way to go from point A to point B.
+
+```
+Given the user is happy with their starting point on the map
+When the user clicks on any other area on the map
+Then the application will create the best possible route between the starting point and the new endpoint using matrix routing
+```
+
+### User Story 4:
+As a user, I want to add multiple endpoints to my trip.
+
+```
+Given the user has added at least one endpoint
+When the user clicks on another place on their map
+Then the application will connect the existing route plotted to include all new endpoints
+```
