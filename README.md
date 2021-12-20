@@ -3,7 +3,7 @@
 Interactive map created using [Create React App](https://github.com/facebook/create-react-app) and TomTom Maps SDK API.
 
 ## Hosted on Heroku
-Check out the live application here [TomTomMatrixMap](#)
+Check out the live application [here](https://matrixroutingmap.herokuapp.com/)
 
 ## Key Node Packages Used
 - react v. 17.0.2
