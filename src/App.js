@@ -164,7 +164,7 @@ const App = () => {
     <div>
       {/* only load if map is going to render */}
       {map && 
-        <div className="app" id='App2'>
+        <div className="app">
           <h1>Where to?</h1>
           <div className="search-bar">
             <input 

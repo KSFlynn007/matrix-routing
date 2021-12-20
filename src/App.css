@@ -10,10 +10,13 @@ body{
   color: white;
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+
 }
 
 .app {
   height: 45em;
+  width: 60em;
 }
 
 h1{
@@ -49,8 +52,8 @@ h1{
 }
 
 .map{
-  height: 100%;
-  aspect-ratio: 1;
+  width: 100%;
+  height: 80%;
   margin: auto;
   color: black;
 }
@@ -76,11 +79,9 @@ h1{
   margin-bottom: 0;
 }
 
-@media all and (max-width: 792px) {
-  .map {
-    height: 70%;
-    margin: auto;
-    color: black;
+@media all and (max-width: 800px){
+  .map{
+    width: 60%;
   }
 }
 
