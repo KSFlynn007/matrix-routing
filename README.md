@@ -2,8 +2,10 @@
 
 Interactive map created using [Create React App](https://github.com/facebook/create-react-app) and TomTom Maps SDK API.
 
-## Hosted on Heroku
-Check out the live application [here](https://matrixroutingmap.herokuapp.com/)
+## Hosted on Netlify
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a1002f05-1215-4a69-bdad-284c32154a46/deploy-status)](https://app.netlify.com/sites/matrixroutingmap/deploys)
+
+Check out the live application [here](https://matrixroutingmap.netlify.app/)
 
 ## Key Node Packages Used
 - react v. 17.0.2
