@@ -167,18 +167,20 @@ const App = () => {
         <div className="app">
           <h1>Where to?</h1>
           <div className="search-bar">
+            <p>Latitude:</p>
             <input 
               type="number"
               id="latitude"
               className="latitude"
-              placeholder="Latitude"
+              placeholder={search.latitude}
               />
+            <p>Longitude:</p>
             <input 
               type="number"
               id="longitude"
               className="longitude"
-              placeholder="Longitude"
               name='longitude'
+              placeholder={search.longitude}
               />
               <button
                 className='search-btn'

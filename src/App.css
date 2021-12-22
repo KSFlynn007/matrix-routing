@@ -3,6 +3,10 @@
   src: url(Air\ Americana.ttf);
 }
 
+html, body{
+  overflow-x: hidden;
+}
+
 body{
   display: flex;
   justify-content: center;
@@ -10,8 +14,6 @@ body{
   color: white;
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      overflow-x: hidden;
-
 }
 
 .app {
@@ -32,13 +34,10 @@ h1{
   justify-content: center;
 }
 
-.longitude{
-  margin: 0 1em;
-  padding: 0.5em;
-}
-
+.longitude,
 .latitude{
   padding: 0.5em;
+  margin: 0 1em 0 0.5em;
 }
 
 .search-btn{
@@ -53,7 +52,7 @@ h1{
 
 .map{
   width: 100%;
-  height: 80%;
+  height: 65%;
   margin: auto;
   color: black;
 }
@@ -79,18 +78,38 @@ h1{
   margin-bottom: 0;
 }
 
-@media all and (max-width: 800px){
-  .map{
-    width: 60%;
-  }
-}
 
-@media all and (max-width: 600px){
+@media all and (max-width: 680px){
+  h1{
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+  }
+  .latitude,
+  .longitude{
+    padding: 0.3em;
+  }
+  .longitude {
+    margin: 1em 0;
+  }
+  .search-bar{
+    margin-bottom: 1em;
+  }
   .search-bar{
     flex-direction: column;
     align-items: center;
   }
-  .longitude{
-    margin: 1em 0;
+  .map{
+    height: 50%;
   }
+  p{
+    max-width: 70%;
+    display: block;
+    margin: 1em block;
+  }
+}
+
+@media all and (max-width: 400px){
+    h1 {
+      font-size: 2em;
+    }
 }
